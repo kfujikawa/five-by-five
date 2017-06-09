@@ -1,0 +1,55 @@
+.register-login-form {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.register-login-form input[type=password] {
+	margin-bottom: 20px;
+}
+
+.register-submit-button {
+	margin-bottom: 20px;
+}
+
+.login-margin-bottom {
+	margin-bottom: 20px;
+}
+
+.goal-form {
+	width: 500px;
+	margin: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.goal-content {
+	margin: 20px;
+}
+
+.line-up {
+	display: inline;
+}
+
+ul {
+	padding-left: 0;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+.strikethrough:checked + span{
+  text-decoration:line-through
+}
+
+button{
+	margin-top: 20px;
+}
+
+.list{
+	margin-top: 20px;
+}
+
+.img-margin{
+	padding: 10px;
+}

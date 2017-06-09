@@ -1,0 +1,14 @@
+language: node_js
+node_js: node
+deploy: five-by-five-app
+  provider: heroku
+  api_key:
+    secure: 1WKyNoCAgMA5GYy0r5i92hdgEDCF5SzIk/pQVnu5EOU0BsvPFOdgZHQlO5Pemh77aGV3dTDtB7artlGS13+uL3kKSoQWZf0zgue1Clz+KjRjkvT74xjtTdB8ucD8XTHGiY/NKYK7B6wuFC99DS7CNVPFgBc6lY2mX84kshWCKUgLdcCL3hPqke7gous4Oq9h6otSqhgEI/hqCtH4zaJapSN9ktHGuvnVik9wPIClLcDLhTXk9KJ8uU8SKaLXQCVZ3W451UNBbFWs1t1Y/0Oi3j7sKaiYH3B3W/kSBQ66erEXoCcWyR8PlolA2c1e9g4+wxS/UTxpxs1cjpJBIzQjP36sWQxsbBb7gHfP0m3Vebq320t2ui0rN3TzRCnXphFtjrzPZ8jPSHzNThHQxw0+QH6u3KNK6N3CYunvgnIgRRv9ZSYF0QXZZOvicF4nVuPeN55UwCbKPXeHPvWmYpQqVh5ji+efothaWHSy1AlGanaRg97MaJ89cVKNH7G0GhLL/jjBh9Qr5YqbHGz4oIUglgwLZ/uyUL4zYO4w5YA/uq3j3Je+vzfbnr4QtK8NSEjCafzzmDayD37O4rUKer0e8+iGbykFWeAwi/Az9OEk8DTevw7rKB0mNB0yUtzRhECz7wEkEQRkQSN8oBhnstf79I8cw65yg2bKwhwoc/yd/OA=
+  app: five-by-five-app
+  on:
+    repo: kfujikawa/five-by-five
+notifications:
+  email:
+    - kinuyofujikawa@gmail.com
+on_success: always
+on_failure: always
