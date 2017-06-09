@@ -10,4 +10,4 @@ Users can create a list of goals that fall into Relationship, Career, Health, an
 * Tests for each API (creating an entry, updating, deleting)
 * Continuous integration testing 
 * Mobile first responsive design
-* Landing page
+* Landing page and other things
