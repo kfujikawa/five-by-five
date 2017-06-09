@@ -13,6 +13,17 @@ const { TEST_DATABASE_URL } = require('../config/config');
 
 chai.use(chaiHttp);
 
+//Seeding fake data to db
+
+function generateGoalData() {
+  return {
+    career: faker.random.words(),
+    relationships: faker.random.words(),
+    health: faker.random.words(),
+    wealth: faker.random.words()
+  };
+}
+
 describe("Goal List", function(){
 
   it("should return a 200 status code and HTML on GET", function(){
