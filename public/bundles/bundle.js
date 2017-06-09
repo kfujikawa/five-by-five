@@ -11592,11 +11592,12 @@ var Footer = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                { className: "container-fluid text-center footer" },
+                { "class": "copyright" },
+                "\xA9 2017 Kinuyo Fujikawa: ",
                 _react2.default.createElement(
-                    "h3",
-                    null,
-                    "Kinuyo Fujikawa 2017"
+                    "a",
+                    { href: "mailto:kinuyofujikawa@gmail.com" },
+                    "Contact Me"
                 )
             );
         }

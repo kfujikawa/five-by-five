@@ -6,8 +6,8 @@ class Footer extends React.Component {
     }
     render () {
         return (
-            <div className="container-fluid text-center footer">
-                <h3>Kinuyo Fujikawa 2017</h3>
+            <div class="copyright">
+                &copy; 2017 Kinuyo Fujikawa: <a href= "mailto:kinuyofujikawa@gmail.com">Contact Me</a>
             </div>
         )
     }
