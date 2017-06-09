@@ -86,6 +86,7 @@ class GoalList extends React.Component {
       .catch(error => {
         console.log(error);
       });
+      this.refs.name.value = "";
   }
 
   handleChange(e) {

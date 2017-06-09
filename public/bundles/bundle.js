@@ -11763,6 +11763,7 @@ var GoalList = function (_React$Component) {
       }).catch(function (error) {
         console.log(error);
       });
+      this.refs.name.value = "";
     }
   }, {
     key: 'handleChange',
