@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: G4qkIABqoaTrf0xFkrNQphbHS4pOuJucO1jmUa1TQbB1vvNQ5lTAc/1/pbvjt5GpK0fwTAv+tKomkc/7MfN75vWoitgyuba5B1E3KhgfBLsb2LHscbnwV2OKS5ez/xzFqpJHubrmZuxZ4a29VV55jmFZVdAev+WgWLCBpg8sAmS4kZ/2MPlUUjw8AHX2CsieQX2rOI0OKWSdNmWHJ2bC1+uo6m0yyJz+Kkh4FWgWs0mEJVuuv/OVgSEbelCvKfBtEVZq77WbV5hnszgsLKOHFE3AslkHvDJz3//awoEL+orpkTxF0S/QoC53CvmUZjXliYv82v0scrdOs4EOoaUbf3wJ5Lh69SPFqzmkn61wx0ASaCOIXeptp/rbHsJh+t2om8JveAABVlwzheUppwJqairhANcqeZ8iTqNGo/cWQ1uPVMdjJRITU31aH6KYzklYwJpEWtVoV7gTnIV/oTw7rhOP9K5ufwJyX1UmPKiuao7NKwFzVN+70bZ9uS6RIGMDciEy7sqhJ397RzH/0WgtlT5KmBldRLkWOb+pESKgUfJJ9zh0scSoa3/R40BV1DaMnqvDqH6ZGQlwqMbwOo3Bs9+8Rs4UCcpByU3MnXVhym8c+KV+HNRNbiKAFITi6Qn4te7147YoMQWZ5OyZKXxXZFF0aAXuPCQ7SyH8qyI50ZU=
+  app: five-by-five
+  on:
+    repo: kfujikawa/five-by-five
