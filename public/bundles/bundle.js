@@ -7470,12 +7470,8 @@ var GoalContainer = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'goal-category' },
-        _react2.default.createElement(
-          'div',
-          { className: 'image fit img-margin' },
-          _react2.default.createElement('img', { src: this.resolveImage(this.props.type), alt: '' })
-        ),
+        { className: 'col-md-5' },
+        _react2.default.createElement('img', { className: 'image fit', src: this.resolveImage(this.props.type), alt: '' }),
         _react2.default.createElement(
           'ul',
           { className: 'content goal-content' },
@@ -11841,8 +11837,12 @@ var GoalList = function (_React$Component) {
           { id: 'three' },
           _react2.default.createElement(
             'div',
-            { className: 'inner' },
-            list
+            { className: 'container' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row 50% uniform' },
+              list
+            )
           )
         )
       );

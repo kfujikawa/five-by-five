@@ -39,17 +39,15 @@ export default class GoalContainer extends React.Component {
 
   render() {
     return (
-      <div className="goal-category">
-        <div className="image fit img-margin">
-          <img src={this.resolveImage(this.props.type)} alt="" />
+        <div className="col-md-5">
+          <img className="image fit" src={this.resolveImage(this.props.type)} alt=""/>
+          <ul className="content goal-content">
+            <header>
+              <h3>{this.props.type}</h3>
+            </header>
+            {this.appendGoals()}
+          </ul>
         </div>
-        <ul className="content goal-content">
-          <header>
-            <h3>{this.props.type}</h3>
-          </header>
-          {this.appendGoals()}
-        </ul>
-      </div>
     );
   }
 }

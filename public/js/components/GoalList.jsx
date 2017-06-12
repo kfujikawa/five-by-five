@@ -123,9 +123,11 @@ class GoalList extends React.Component {
           </div>
         </form>
         <section id="three">
-          <div className="inner">
-            {list}
-          </div>
+            <div className="container">
+              <div className="row 50% uniform">
+                  {list}
+              </div>
+            </div>
         </section>
       </div>
     );
