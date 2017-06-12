@@ -17,21 +17,66 @@ chai.use(chaiHttp);
 
 function generateGoalData() {
   return {
-    career: faker.random.words(),
-    relationships: faker.random.words(),
-    health: faker.random.words(),
-    wealth: faker.random.words()
+    name: faker.random.words(),
+    type: "Career",
+    isChecked: faker.random.boolean()
   };
 }
 
-describe("Goal List", function(){
+function seedTaskData() {
+  console.info('Seeding task data');
+  const seedData = [];
 
-  it("should return a 200 status code and HTML on GET", function(){
+  for (let i = 1; i < 3; i++) {
+    seedData.push(generateGoalData());
+  }
+
+  return Task.insertMany(seedData);
+}
+
+function tearDownDb() {
+  console.warn('Deleting database');
+  return mongoose.connection.dropDatabase();
+}
+
+describe("API Tests for Goals", function () {
+  before(function() {
+    return runServer(TEST_DATABASE_URL);
+  });
+
+  beforeEach(function() {
+    return seedTaskData();
+  });
+
+  afterEach(function() {
+    return tearDownDb();
+  });
+
+  after(function() {
+    return closeServer();
+  });
+
+  it('should create a goal', function() {
+    const newGoal = generateGoalData();
+
+    return chai.request(app).post('api/goals').send(newGoal).then(function(res) {
+      res.should.have.status(201);
+      res.should.be.json;
+      res.should.be.a('Object');
+      res.body.name.should.equal(newGoal.name);
+      console.log(newGoal.name);
+      res.body.name.should.be.a('String');
+      expect(res.body.name.length).to.be.at.least(1);
+      expect(res.body.name.length).to.be.below(40);
+    });
+  });
+
+  it("should return a 200 status code and HTML on GET", function () {
     return chai.request(app)
       .get("/")
       .then(function(res){
         res.should.have.status(200);
         res.should.be.html;
-      });
+    });
   });
 });
