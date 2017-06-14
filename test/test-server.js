@@ -23,15 +23,16 @@ function generateGoalData() {
   };
 }
 
-function seedTaskData() {
-  console.info('Seeding task data');
+function seedGoalData() {
+  console.info('Seeding goal data');
   const seedData = [];
 
   for (let i = 1; i < 3; i++) {
     seedData.push(generateGoalData());
   }
+  console.log(seedData);
 
-  return Task.insertMany(seedData);
+  return Goal.create(seedData);
 }
 
 function tearDownDb() {
@@ -45,7 +46,7 @@ describe("API Tests for Goals", function () {
   });
 
   beforeEach(function() {
-    return seedTaskData();
+    return seedGoalData();
   });
 
   afterEach(function() {
@@ -58,6 +59,8 @@ describe("API Tests for Goals", function () {
 
   it('should create a goal', function() {
     const newGoal = generateGoalData();
+
+    console.log('cool story bro');
 
     return chai.request(app).post('api/goals').send(newGoal).then(function(res) {
       res.should.have.status(201);
