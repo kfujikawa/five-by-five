@@ -32,7 +32,6 @@ Controller = {
   },
 
   remove(req, res, next) {
-    console.log('this is working');
     console.log(req.params);
     Goal.findByIdAndRemove({ _id: req.params.id })
       .then(goal => {

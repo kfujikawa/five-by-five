@@ -15,13 +15,13 @@ Users can create a list of goals under Relationships, Career, Health and Wealth.
 * Landing page 
 
 ## API Documentation 
-**Show User**
+**Show Goals**
 ----
-  Returns json data about a single user.
+  Returns json data about a user entered goals.
 
 * **URL**
 
-  /users/:id
+  /goals
 
 * **Method:**
 
@@ -29,9 +29,7 @@ Users can create a list of goals under Relationships, Career, Health and Wealth.
   
 *  **URL Params**
 
-   **Required:**
- 
-   `id=[integer]`
+  None
 
 * **Data Params**
 
@@ -40,33 +38,121 @@ Users can create a list of goals under Relationships, Career, Health and Wealth.
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12, name : "Michael Bloom" }`
+    **Content:** `[{ _id : 593af0d253e67b7d453cfcad, name : "My Awesome Goal", type: 'career', isChecked: true }]`
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
+  * **Code:** 401 UnauthorizedError <br />
+    **Content:** `{ error : "You need a token to access that resource." }`
 
-  OR
+  `POST`
+  
+*  **URL Params**
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
+  None
 
-* **Sample Call:**
+* **Data Params**
 
-  ```javascript
-    $.ajax({
-      url: "/users/1",
-      dataType: "json",
-      type : "GET",
-      success : function(r) {
-        console.log(r);
-      }
-    });
-  ```
+    **Required:**
+ 
+   `name: "String", type: {type: String, enum: types }, isChecked: {type: Boolean, default: false }`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `[{ _id : 593af0d253e67b7d453cfcad, name : "My Awesome Goal", type: 'career', isChecked: true }]`
+ 
+* **Error Response:**
+
+  * **Code:** 401 UnauthorizedError <br />
+    **Content:** `{ error : "You need a token to access that resource." }`
+
+**Update/Delete Goal**
+----
+  Mark a goal as "done" and delete existing goals.
+
+* **URL**
+
+  /goals/:id
+
+* **Method:**
+
+  `PUT`
+  
+*  **URL Params**
+
+    **Required:**
+ 
+   `_id=[integer]`
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 201 <br />
+    **Content:** `[{ _id : 593af0d253e67b7d453cfcad, name : "My Awesome Goal", type: 'career', isChecked: true }]`
+ 
+* **Error Response:**
+
+  * **Code:** 401 UnauthorizedError <br />
+    **Content:** `{ error : "You need a token to access that resource." }`
 
 
-### Users
+  `DELETE`
+  
+*  **URL Params**
+
+    **Required:**
+ 
+   `_id=[integer]`
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 204 <br />
+ 
+* **Error Response:**
+
+  * **Code:** 401 UnauthorizedError <br />
+    **Content:** `{ error : "You need a token to access that resource." }`
+
+**Show User**
+----
+  Returns json data about a single user.
+
+* **URL**
+
+  /authenticated
+
+* **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+    **Required:**
+ 
+   `_id=[integer]`
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ _id : 12 }`
+ 
+* **Error Response:**
+
+  * **Code:** 401 UnauthorizedError <br />
+    **Content:** `{ error : "You need a token to access that resource." }`
 
 
 ## Screenshots
+

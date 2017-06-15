@@ -6,7 +6,7 @@ class Footer extends React.Component {
     }
     render () {
         return (
-            <div class="copyright">
+            <div className="copyright">
                 &copy; 2017 Kinuyo Fujikawa: <a href= "mailto:kinuyofujikawa@gmail.com">Contact Me</a>
             </div>
         )

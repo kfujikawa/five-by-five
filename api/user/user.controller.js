@@ -7,6 +7,7 @@ const Controller = {
       .select('-password')
       .then(user => {
         res.status(200).json(user);
+        console.log(user);
       })
       .catch(error => next(error));
   },
