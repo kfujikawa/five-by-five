@@ -3,12 +3,12 @@ const Controller = require('./goal.controller');
 const { get, create, update, remove } = Controller;
 
 router
-  .route('/') // /goals
+  .route('/') 
   .get(get)
   .post(create);
 
 router
-  .route('/:id') // /goals
+  .route('/:id') 
   .put(update)
   .delete(remove);
 

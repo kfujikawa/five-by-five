@@ -8,7 +8,6 @@ class GoalList extends React.Component {
     super(props);
     this.onAddSubmit = this.onAddSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.removeItem = this.removeItem.bind(this);
     this.getGoals = this.getGoals.bind(this);
     this.filter = this.filter.bind(this);
 

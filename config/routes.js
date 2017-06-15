@@ -1,4 +1,3 @@
-const rootRouter = require('../api/root/root.router');
 const goalRouter = require('../api/goal/goal.router');
 const userRouter = require('../api/user/user.router');
 const authRouter = require('../api/auth/auth.router');

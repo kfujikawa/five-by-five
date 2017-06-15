@@ -7547,7 +7547,6 @@ var Goal = function (_React$Component) {
       var _this2 = this;
 
       var id = event.target.parentNode.getAttribute('value');
-      console.log('this is deleteGoal in goal component');
       (0, _isomorphicFetch2.default)('/api/goals/' + id, {
         method: 'DELETE',
         headers: {
@@ -7641,20 +7640,6 @@ var isAuthenticated = exports.isAuthenticated = function isAuthenticated() {
 
 var logout = exports.logout = function logout() {
   delete localStorage.token;
-};
-
-var notAuthed = exports.notAuthed = function notAuthed(auth) {
-  return function (nextState, replace) {
-    var query = nextState.location.query;
-
-    if (localStorage.token) replace({ pathname: query && query.return_to || '/' });
-  };
-};
-
-var requireAuth = exports.requireAuth = function requireAuth(auth) {
-  return function (nextState, replace) {
-    if (!auth.loggedIn) replace({ pathname: '/login', query: { return_to: nextState.location.pathname } });
-  };
 };
 
 /***/ }),
@@ -11651,7 +11636,6 @@ var GoalList = function (_React$Component) {
 
     _this.onAddSubmit = _this.onAddSubmit.bind(_this);
     _this.handleChange = _this.handleChange.bind(_this);
-    // this.removeItem = this.removeItem.bind(this);
     _this.getGoals = _this.getGoals.bind(_this);
     _this.filter = _this.filter.bind(_this);
 

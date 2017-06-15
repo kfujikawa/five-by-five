@@ -14,7 +14,6 @@ class Goal extends React.Component {
 
   deleteGoal(event) {
     const id = event.target.parentNode.getAttribute('value');
-    console.log('this is deleteGoal in goal component');
     fetch(`/api/goals/${id}`, {
       method: 'DELETE',
       headers: {
