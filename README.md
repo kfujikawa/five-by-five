@@ -154,5 +154,6 @@ Users can create a list of goals under Relationships, Career, Health and Wealth.
     **Content:** `{ error : "You need a token to access that resource." }`
 
 
-## Screenshots
+## Screenshot
+![Old Military Radio](./public/assets/images/screenshot_home.png?raw=true "Homepage")
 
