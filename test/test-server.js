@@ -3,6 +3,7 @@ const chai = require("chai");
 const chaiHttp = require("chai-http");
 const mongoose = require('mongoose');
 const faker = require('faker');
+const jwt = require('express-jwt');
 
 const should = chai.should();
 const expect = chai.expect;
@@ -13,12 +14,10 @@ const { TEST_DATABASE_URL } = require('../config/config');
 
 chai.use(chaiHttp);
 
-//Seeding fake data to db
-
 function generateGoalData() {
   return {
     name: faker.random.words(),
-    type: "Career",
+    type: "career",
     isChecked: faker.random.boolean()
   };
 }
@@ -59,18 +58,21 @@ describe("API Tests for Goals", function () {
 
   it('should create a goal', function() {
     const newGoal = generateGoalData();
+    const token = jwt({ secret: 'secret' });
 
-    console.log('cool story bro');
+    console.log(token);
 
-    return chai.request(app).post('api/goals').send(newGoal).then(function(res) {
-      res.should.have.status(201);
-      res.should.be.json;
-      res.should.be.a('Object');
-      res.body.name.should.equal(newGoal.name);
-      console.log(newGoal.name);
-      res.body.name.should.be.a('String');
-      expect(res.body.name.length).to.be.at.least(1);
-      expect(res.body.name.length).to.be.below(40);
+    return chai.request(app).post('/api/goals')
+      .send(newGoal)
+      .then(function(res) {
+        res.should.have.status(201);
+        res.should.be.json;
+        res.should.be.a('Object');
+        res.body.name.should.equal(newGoal.name);
+        console.log(newGoal.name);
+        res.body.name.should.be.a('String');
+        expect(res.body.name.length).to.be.at.least(1);
+        expect(res.body.name.length).to.be.below(40);
     });
   });
 
