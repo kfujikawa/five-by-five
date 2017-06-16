@@ -157,3 +157,4 @@ Users can create a list of goals under Relationships, Career, Health and Wealth.
 ## Screenshot
 ![Old Military Radio](./public/assets/images/screenshot_home.png?raw=true "Homepage")
 
+![Juice glass, Tree with heart, Laptop, Gold coins](./public/assets/images/screenshot_goals.png?raw=true "Homepage")
