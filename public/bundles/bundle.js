@@ -11510,19 +11510,6 @@ var Banner = function (_React$Component) {
                         "h1",
                         null,
                         "Five By Five: Goal setting through positive thought"
-                    ),
-                    _react2.default.createElement(
-                        "ul",
-                        { className: "actions" },
-                        _react2.default.createElement(
-                            "li",
-                            null,
-                            _react2.default.createElement(
-                                "a",
-                                { href: "/register", className: "button alt" },
-                                "Register"
-                            )
-                        )
                     )
                 )
             );
