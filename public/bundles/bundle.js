@@ -7470,7 +7470,7 @@ var GoalContainer = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'col-md-5' },
+        { className: 'col-md-3' },
         _react2.default.createElement('img', { className: 'image fit', src: this.resolveImage(this.props.type), alt: '' }),
         _react2.default.createElement(
           'ul',

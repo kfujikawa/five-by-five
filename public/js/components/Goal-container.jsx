@@ -39,7 +39,7 @@ export default class GoalContainer extends React.Component {
 
   render() {
     return (
-        <div className="col-md-5">
+        <div className="col-md-3">
           <img className="image fit" src={this.resolveImage(this.props.type)} alt=""/>
           <ul className="content goal-content">
             <header>
