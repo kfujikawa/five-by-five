@@ -1,4 +1,4 @@
-# [Five By Five](https://fivebyfive.herokuapp.com/)
+# [Five By Five](https://five-by-five-app.herokuapp.com/)
 
 ## Summary 
 
