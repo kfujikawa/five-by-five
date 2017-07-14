@@ -1,8 +1,11 @@
-{
+ {
   "name": "five-by-five",
   "version": "1.0.0",
   "description": "Goal setting planner",
   "main": "server.js",
+  "engines": {
+    "node": "7.3.0"
+  },
   "scripts": {
     "heroku-prebuild": "npm install nodemon",
     "test": "mocha",
